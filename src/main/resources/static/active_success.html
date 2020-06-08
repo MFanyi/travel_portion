@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <title>激活</title>
+        <link rel="stylesheet" type="text/css" href="css/common.css">
+        <link rel="stylesheet" href="css/register.css">
+		<!--导入jquery-->
+        <script src="js/jquery-3.5.1.min.js"></script>
+    </head>
+    <script>
+        /*
+        * 通过url传输数据，实现页面的动态更新
+        * */
+        var url=window.location.href;
+        var index=url.indexOf('?');
+        var code=url.substring(index+1,url.length);
+        $(function () {
+            $.get("activeUserServlet",{"code":code},function (data) {
+                $("#activeMsg").html(data);
+            },"text");
+        });
+
+    </script>
+
+    <body>
+    <!--引入头部-->
+    <header id="header">
+
+    </header>
+
+        <!-- 头部 end -->
+    	<div style="text-align:center;red:yellow;font-weight:bold;height:180px;padding-top:135px;font-size:30px;">
+    		<h4 id="activeMsg">&nbsp;</h4>
+    	</div>
+        <!--引入尾部-->
+    <footer id="footer">
+
+    </footer>
+    <script src="js/include.js"></script>
+    </body>
+</html>
