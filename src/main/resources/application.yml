@@ -22,7 +22,7 @@ spring:
   mail:
     host: smtp.163.com
     username: qq741082214@163.com
-    password: SRLERLHPAPKBUFBK #授权码
+    password: xxxx #授权码
     protocol: smtp
 
 
